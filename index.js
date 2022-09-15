@@ -68,7 +68,7 @@ const managerPrompt = () => {
             message: 'What is the office number of the project manager?'
         }
     ]).then((answer) => {
-        let manager = new Manager(answer.id, answer.id, answer.email, answer.officeNum)
+        let manager = new Manager(answer.id, answer.name, answer.email, answer.officeNum)
         for (let key in manager) {
             if (manager[key] === null || manager[key].trim('') === "") {
                 console.log("Please provide an answer to all fields")
@@ -225,8 +225,8 @@ const createHTML = (teamMembers) => {
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 <ul class="list-group">
-                    <li class="list-group-item">${member.id}</li>
-                    <li class="list-group-item"><a href="mailto:${member.email}">${member.email}</a></li>
+                    <li class="list-group-item">ID: ${member.id}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${member.email}">${member.email}</a></li>
                     <li class="list-group-item">${renderMoreInfo(member)}</li>
                 </ul>
             </div>
