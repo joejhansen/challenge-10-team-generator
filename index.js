@@ -234,7 +234,7 @@ const createHTML = (teamMembers) => {
     </div>`;
         htmlMiddle = htmlMiddle + newHTML
     });
-    fs.writeFile('./src/test.html', `${htmlTop}\n${htmlMiddle}\n${htmlBottom}`, function (err) {
+    fs.writeFile('./dist/profiles.html', `${htmlTop}\n${htmlMiddle}\n${htmlBottom}`, function (err) {
         if (err) return err
     })
 }
